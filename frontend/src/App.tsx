@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { Container } from 'react-bootstrap';
 export default class App extends React.Component {
@@ -10,19 +11,30 @@ export default class App extends React.Component {
         super(props);
     }
 
+    getRoutes(): any {
+
+        return (
+            <>
+
+            </>
+        )
+    }
+
 
     render() {
         return (
-            <React.Fragment>
+            <Router>
                 <Header />
                 <main className="py-3">
                     <Container>
-                        <HomeScreen />
+                        <Routes>
+                        <Route path='/' element={<HomeScreen />} caseSensitive />
+                        {/* <HomeScreen /> */}
+                        </Routes>
                     </Container>
                 </main>
                 <Footer />
-
-            </React.Fragment>
+            </Router>
         );
     }
 }
