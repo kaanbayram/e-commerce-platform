@@ -9,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].[contenthash].js",
     chunkFilename: "js/[name].[contenthash].js",
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -46,14 +47,21 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.(jpg|png|jpe?g|gif)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-          outputPath: "images",
-          publicPath: "public",
-          sourceMap: true,
-        },
+        test: /\.(jpg|gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+              // name: "[name].[ext]",
+              // outputPath: "images",
+              // publicPath: "public",
+              // sourceMap: true,
+            },
+          },
+        ],
       },
     ],
   },
@@ -64,11 +72,12 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
     },
+    historyApiFallback: true
   },
   mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "/public/index.html",
       title: "DataGrid",
       filename: "index.html",
     }),
