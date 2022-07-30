@@ -26,15 +26,19 @@ export default class App extends React.Component {
     render() {
         return (
             <Router>
+                <Routes>
                 <Header />
+                </Routes>
                 <main className="py-3">
                     <Container>
+
                         <Routes>
 
                         <Route path='/' element={<HomeScreen />} caseSensitive />
                         <Route path='/product/:id' element={<ProductScreen />} />
                         
                         </Routes>
+                        
                     </Container>
                 </main>
                 <Footer />

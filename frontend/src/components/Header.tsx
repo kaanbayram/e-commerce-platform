@@ -1,11 +1,16 @@
 import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
+
+
 const Header = () => {
-    return <header>
+    return (<header>
         <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
             <Container>
-                <Navbar.Brand href="/">EverGreenShop</Navbar.Brand>
+                <LinkContainer to="/">
+                    <Navbar.Brand href="/">EverGreenShop</Navbar.Brand>
+                </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
@@ -16,6 +21,7 @@ const Header = () => {
             </Container>
         </Navbar>
     </header>
+    );
 }
 
 export default Header
