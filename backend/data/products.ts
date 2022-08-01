@@ -79,4 +79,4 @@ const products: any = [
   },
 ]
 
-export default products
+module.exports = products
