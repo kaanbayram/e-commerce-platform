@@ -8,11 +8,11 @@ const app = express();
 
 app.listen(5000, () => { console.log("Working on 5000") });
 
-var corsOptions = {
-    origin: "http://http://192.168.1.7:5000"
-  };
+// var corsOptions = {
+//     origin: "http://http://192.168.1.7:5000"
+//   };
   
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
     res.send('API is running');

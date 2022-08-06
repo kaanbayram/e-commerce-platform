@@ -12,6 +12,11 @@ const HomeScreen = () => {
 
 
         const fetchProducts = async () => {
+
+            // headers: {
+            //     'Content-Type': 'application/json;charset=UTF-8',
+            //     "Access-Control-Allow-Origin": "*",
+            // }
             const { data } = await axios.get('/api/products');
 
             setProducts(data);

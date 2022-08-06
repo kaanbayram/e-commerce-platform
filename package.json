@@ -1,11 +1,11 @@
 {
   "name": "e-commerce-platform",
-  "proxy":"http://192.168.1.7:5000",
+  "proxy": "http://192.168.1.7:5000",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node backend/server.ts"
+    "start": "nodemon backend/server.ts"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "@types/express": "^4.17.13",
     "@types/node": "^18.6.3",
     "@types/typescript": "^2.0.0",
+    "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.0-dev.20220731"
   }
