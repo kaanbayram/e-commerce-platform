@@ -72,6 +72,9 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
     },
+    proxy: {
+      '/': 'http://localhost:5000',
+    },
     historyApiFallback: true
   },
   mode: "development",
