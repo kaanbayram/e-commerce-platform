@@ -27,7 +27,7 @@ const ProductScreen = (props: any) => {
         fetchProduct();
 
 
-    }, [])
+    }, [useParams()])
 
 
     return (
