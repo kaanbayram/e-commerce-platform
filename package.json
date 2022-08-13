@@ -21,6 +21,8 @@
   "homepage": "https://github.com/kaanbayram/e-commerce-platform#readme",
   "dependencies": {
     "@types/mongoose": "^5.11.97",
+    "colors": "^1.4.0",
+    "colors.ts": "^1.0.20",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
