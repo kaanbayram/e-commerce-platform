@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'uuuuser'
+        ref: 'User'
     },
     image: {
         type: String,
@@ -52,7 +52,7 @@ const productSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Product = mongoose.model('User', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
 
 export default Product;

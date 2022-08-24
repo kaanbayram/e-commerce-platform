@@ -3,29 +3,29 @@ import mongoose from "mongoose";
 const orderSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        require: true,
         ref: 'User'
     },
     orderItems: [{
-        name: { type: String, required: true },
-        qty: { type: Number, required: true },
-        image: { type: String, required: true },
-        price: { type: String, required: true },
+        name: { type: String, require: true },
+        qty: { type: Number, require: true },
+        image: { type: String, require: true },
+        price: { type: String, require: true },
         product: {
             type: mongoose.Schema.Types.ObjectId,
-            required: true,
+            require: true,
             ref: "Product"
         }
     }],
     shippingAddress: {
-        address: { type: String, required: true },
-        city: { type: String, required: true },
-        postalCode: { type: String, required: true },
-        country: { type: String, required: true },
+        address: { type: String, require: true },
+        city: { type: String, require: true },
+        postalCode: { type: String, require: true },
+        country: { type: String, require: true },
     },
     paymentMethod: {
         type: String,
-        required: true
+        require: true
     },
     paymentResult: {
         id: { type: String },
@@ -35,22 +35,22 @@ const orderSchema = new mongoose.Schema({
     },
     taxPrice: {
         type: Number,
-        required: true,
+        require: true,
         default: 0.0
     },
     shippingPrice: {
         type: Number,
-        required: true,
+        require: true,
         default: 0.0
     },
     totalPrice: {
         type: Number,
-        required: true,
+        require: true,
         default: 0.0
     },
     isPaid: {
         type: Boolean,
-        required: true,
+        require: true,
         default: false
     },
     paidAt: {
@@ -58,7 +58,7 @@ const orderSchema = new mongoose.Schema({
     },
     isDelivered: {
         type: Boolean,
-        required: true,
+        require: true,
         default: false
     },
     deliveredAt: {
