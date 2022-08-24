@@ -7,7 +7,9 @@
   "scripts": {
     "server": "nodemon backend/server.ts",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\" "
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "homepage": "https://github.com/kaanbayram/e-commerce-platform#readme",
   "dependencies": {
     "@types/mongoose": "^5.11.97",
+    "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "colors.ts": "^1.0.20",
     "cors": "^2.8.5",
